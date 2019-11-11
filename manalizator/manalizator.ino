@@ -9,9 +9,9 @@
 #define PIN_TRIG 14// пин триг дальномера
 #define PIN_ECHO 12// пин эхо дальномера
 #define MAX_DISTANCE 200// макс расстояние измеряемое дальномером
-char auth[] = "GnoMFEVL6YydXU3Lx6ZBqGJjubvNz9-w";// название токена
-char ssid[] = "mice_eff";  //название wi-fi
-char pass[] = "12345677";  //пароль от wi-fi
+char auth[] = "ваш токен";// название токена
+char ssid[] = "сеть";  //название wi-fi
+char pass[] = "пароль";  //пароль от wi-fi
   int lo = 72; // длина до дна мусорки
   int lm = 40; // длина мусорки
   NewPing sonar(PIN_TRIG, PIN_ECHO, MAX_DISTANCE);
@@ -37,7 +37,7 @@ void loop(){
      if ( b>-1 && b<101  ){
      Blynk.virtualWrite(V8, b); // выводим проценты на 8 виртуальный пин на виртуальный дисплей
      if ( b>=95 ){
-     Blynk.notify("Вынеси мусор, ленивая ж***"); // текст уведомления
+     Blynk.notify("Вынеси мусор"); // текст уведомления
       }
      } else {
        Blynk.virtualWrite(V8, 100);
