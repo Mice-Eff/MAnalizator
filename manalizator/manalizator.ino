@@ -1,3 +1,4 @@
+    
 // Powered by Mice_Eff https://youtu.be/7z2vXxELKN0                   
             #include <SPI.h> 
             #include <ESP8266WiFi.h> // https://github.com/blynkkk/blynk-library/releases/tag/v0.6.1
@@ -12,7 +13,7 @@ char auth[] = "токен";// название токена
 char ssid[] = "сеть";  //название wi-fi
 char pass[] = "пароль";  //пароль от wi-fi
   int lo = 72; // длина до дна мусорки
-  int lm = 40; // длина до края мусорки ( в видео я затупил и сказал херню, ничего отнимать не надо);
+  int lm = 20; // длина до края мусорки ( в видео я затупил и сказал херню, ничего отнимать не надо);
   NewPing sonar(PIN_TRIG, PIN_ECHO, MAX_DISTANCE);
   SimpleTimer timer;
 
@@ -37,15 +38,15 @@ void loop(){
      Blynk.virtualWrite(V8, b); // выводим проценты на 8 виртуальный пин на виртуальный дисплей
      if ( b>=95 ){
      Blynk.notify("Вынеси мусор"); // текст уведомления
+         if(b>101){
+       Blynk.virtualWrite(V8, 100);
+     }
       }
      }
      if(y>lo){
        Blynk.virtualWrite(V8, 0);
      }
-       if(b>101){
-       Blynk.virtualWrite(V8, 100);
-     }
+   
      
 }
-    
 
