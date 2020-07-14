@@ -23,6 +23,7 @@ void setup(){
   Blynk.begin(auth, ssid, pass);
   pinMode(PIN_TRIG, OUTPUT); 
   pinMode(PIN_ECHO, INPUT);
+  //digitalWrite(15, HIGH);         // для 3 варианта подключения
 }
 
 
