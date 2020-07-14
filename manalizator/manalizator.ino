@@ -1,4 +1,4 @@
-// Powered by Mice_Eff https://youtu.be/7z2vXxELKN0                   
+// CREATED BY MICE EFF https://youtu.be/7z2vXxELKN0                   
             #include <SPI.h> // https://github.com/PaulStoffregen/SPI
             #include <ESP8266WiFi.h> // https://github.com/blynkkk/blynk-library/releases/tag/v0.6.1
             #include <BlynkSimpleEsp8266.h>
@@ -49,5 +49,3 @@ void loop(){
    
      
 }
-
-
